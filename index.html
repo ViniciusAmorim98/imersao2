@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Magnética</title>
+
+    <link rel="icon" href="img/logo.png">
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="stylesheet" href="css/media.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/for.css">
+
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '298670282642794');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=298670282642794&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
+    <style>
+        .countdown {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+        }
+
+        .countdown .dias,
+        .horas,
+        .minutos,
+        .segundos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            /* background-color: rgb(14, 14, 14); */
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: solid 1px #c6985b;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0;
+            width: 95px;
+        }
+
+        #tempo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        span#days,
+        #hours,
+        #minutes,
+        #seconds {
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        #info #data i,
+        #info #hora i,
+        #info #localizacao i {
+            color: #c6985b;
+        }
+
+        #data,
+        #hora,
+        #localizacao {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+    </style>
+
+
+
+
+    <!--css das peguntas frequentes e carrossel -->
+    <style>
+        .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #af914d;
+        }
+
+        .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-question {
+            background-color: #af914d;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .accordion-answer {
+            padding: 10px;
+            display: none;
+            padding: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* Estilos para o carrossel */
+        .carousel {
+            width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* Estilos para os botões de navegação */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            outline: none;
+            z-index: 2;
+        }
+
+        .carousel-button i {
+            font-size: 1.5rem;
+            /* Tamanho do ícone */
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <!--faixa do top-->
+    <div class="faixa-top">
+        <p>1º Lote Liberado! O Maior Evento de Gestão de escritórios do Brasil</p>
+    </div>
+    <!--fianal da faixa do top-->
+
+    <!--header-->
+    <header>
+
+        <div class="container header-flex">
+            <!-- <img id="ele-mb" src="img/ele-mb.png" alt=""> -->
+            <div class="header-text">
+                <img src="img/logo.png" alt="" width="180">
+                <h1 class="bold-h1">
+                    Em&nbsp;<span class="marrom" style=" font-weight: bold;">dois dias</span>&nbsp;você vai desbloquear
+                    a
+                    jornada para criar
+                    uma
+                    empresa jurídica altamente gerenciável,
+                    alcançando&nbsp;<span class="marrom" style=" font-weight: bold;">aumento de
+                        faturamento,</span>&nbsp;estabilidade e processos internos.
+                </h1>
+
+                <p>
+                    Junte-se a centenas de empresários em um ecossistema de aceleração e crescimento para trocar
+                    experiências, fazer networking e acessar o conhecimento que vai transformar o seu escritório.
+                </p>
+
+                <div class="info-event">
+                    <div class="data">
+                        <img id="img-calendario" src="img/calendario.png" alt="">
+                        <p>
+                            Dia 6 e 7 Setembro de 2024
+                        </p>
+                    </div>
+
+                    <div class="loc">
+                        <img id="img-localizacao" src="img/localizacao.png" alt="">
+                        <p>
+                            São Paulo
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+    <!--fim do header-->
+
+    <!--video-->
+    <section id="video">
+        <div class="container container-video">
+            <iframe src="https://player.vimeo.com/video/941036554?h=27b501b914" width="640" height="564" frameborder="0"
+                allow="autoplay; fullscreen" allowfullscreen>
+            </iframe>
+
+            <a href="#ingressos">PEGUE SEU INGRESSO</a>
+        </div>
+    </section>
+    <!--video-->
+
+
+
+    <!--section clareza-->
+    <section id="clareza">
+        <div class="container-clareza flex-clareza flex-mb">
+
+            <div>
+                <h2>Depois Desses 2 Dias Você Vai Ter<br id="br-test">&nbsp;<span class="marrom"
+                        style="font-weight: bold;">Clareza</span>&nbsp;do Caminho Para:
+                </h2>
+
+                <div class="check-clareza">
+                    <div>
+                        <img src="img/check-icon.png" alt="" width="20">
+                        <p>Não&nbsp;<span style="font-weight: bold;">ficar preso</span>&nbsp;no operacional do
+                            seu
+                            escritório.</p>
+                    </div>
+
+                    <div>
+                        <img src="img/check-icon.png" alt="" width="20">
+                        <p>Não ficar refém de&nbsp;<span style="font-weight: bold;">processos mal
+                                resolvidos.</span></p>
+                    </div>
+
+                    <div>
+                        <img src="img/check-icon.png" alt="" width="20">
+                        <p>Aprender a&nbsp;<span style="font-weight: bold;">administrar</span>&nbsp;e contratar um time
+                            de alta performance.</p>
+                    </div>
+
+                    <div>
+                        <img src="img/check-icon.png" alt="" width="20">
+                        <p>Ter tudo sobre remuneração e formas de escalar seus rendimentos.</p>
+                    </div>
+
+                    <div>
+                        <img src="img/check-icon.png" alt="" width="20">
+                        <p>Mapa para que seu escritório&nbsp;<span style="font-weight: bold;">avance em 1
+                                ano</span>&nbsp;o que não avançou em 10.</p>
+                    </div>
+                </div>
+
+
+
+
+                <!--delet
+                <img id="check-pc" src="img/checks.png" alt="">
+
+                <div id="check-mb">
+                    <img src="img/checks-1.png" alt="">
+                    <img src="img/checks-2.png" alt="">
+                    <img src="img/checks-3.png" alt="">
+                    <img src="img/checks-4.png" alt="">
+                </div>
+                -->
+            </div>
+
+
+        </div>
+    </section>
+    <!--fim seção local-->
+
+    <!--fotos do ultimo eventos-->
+    <section id="espaco">
+        <div class="container">
+            <h2 class="marrom">Fotos do último evento.</h2>
+        </div>
+
+        <div class="container-espaco">
+
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="img/evento1/LETSMIDIA_27042024_ELO_212.jpg" alt="Foto 1">
+                    <img src="img/evento1/LETSMIDIA_27042024_ELO_234.jpg" alt="Foto 2">
+                    <img src="img/evento1/LETSMIDIA_27042024_ELO_247.jpg" alt="Foto 3">
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1)">
+                    <i class="bi bi-chevron-left"></i> <!-- Ícone de seta para a esquerda -->
+                </button>
+                <button class="carousel-button next" onclick="moveSlide(1)">
+                    <i class="bi bi-chevron-right"></i> <!-- Ícone de seta para a direita -->
+                </button>
+            </div>
+
+
+
+        </div>
+    </section>
+    <!--fotos do ultimo eventos-->
+
+    <!--com e sem-->
+    <section id="compara">
+        <div class="container container-compara">
+            <div class="sem">
+                <h3>
+                    Escritórios Sem o Elo:
+                </h3>
+
+                <div class="check-x">
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Baixa margem de lucro.
+                        </p>
+                    </div>
+
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Alta rotatividade de colaboradores.
+                        </p>
+                    </div>
+
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Colaboradores não engajados.
+                        </p>
+                    </div>
+
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Falta de tempo para ter o olhar estratégico.
+                        </p>
+                    </div>
+
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Falta de qualidade de vida.
+                        </p>
+                    </div>
+
+                    <div class="x">
+                        <img src="img/x.png" alt="">
+                        <p>
+                            Falta de tempo com a família.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="com">
+                <div>
+                    <h3>
+                        Escritórios com o Elo:
+                    </h3>
+
+                    <div class="check-v">
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Margem de lucro estabelecida.</p>
+                        </div>
+
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Colaboradores fiéis e com cultura de crescimento.</p>
+                        </div>
+
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Engajamento no time.</p>
+                        </div>
+
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Tempo para olhar de forma estratégica para o negócio.</p>
+                        </div>
+
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Qualidade de vida.</p>
+                        </div>
+
+                        <div class="v">
+                            <img src="img/v.png" alt="">
+                            <p>Tempo com a família.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--com e sem-->
+
+    <!--obrigatorio-->
+    <section id="obrigatorio">
+        <div class="container">
+            <h2>
+                A Imersão Elo é Parada Obrigatória Para Quem:
+            </h2>
+
+            <div>
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Escritórios que têm acima de 3 colaboradores.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Escritórios que já fazem 6 dígitos por ano.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Escritórios que desejam escalar para os 7 dígitos.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Escritórios que se veem em um momento de crescimento.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Tem visão de longo prazo e o sonho de construir um negócio sólido.</p>
+                </div>
+
+                <div class="card">
+                    <img src="img/check-icon-2.png" alt="">
+                    <p>Quer acessar um ecossistema de crescimento exponencial, com empresários que já chegaram onde você
+                        quer chegar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--final obrigatorio-->
+
+    <!--oq ira aprender-->
+    <section id="jornada-crescimento">
+        <div class="container">
+            <h2>
+                Sua Jornada de Dois Anos de Crescimento em Dois Dias
+            </h2>
+            <h3>
+                O que irá aprender:
+            </h3>
+
+            <div>
+                <div class="card-aprender">
+                    <div class="title">
+                        01
+                    </div>
+
+                    <div class="texto">
+                        <h4>
+                            Despertando para a mudança:
+                        </h4>
+
+                        <p>
+                            Diga adeus ao estresse que consome seus dias.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-aprender">
+                    <div class="title">
+                        02
+                    </div>
+
+                    <div class="texto">
+                        <h4>
+                            Visão estratégica para crescimento:
+                        </h4>
+
+                        <p>
+                            Ajuste as engrenagens da sua operação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-aprender">
+                    <div class="title">
+                        03
+                    </div>
+
+                    <div class="texto">
+                        <h4>
+                            Escritório inteligente:
+                        </h4>
+
+                        <p>
+                            Transforme a base do seu escritório com sistemas e processos inteligentes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-aprender">
+                    <div class="title">
+                        04
+                    </div>
+
+                    <div class="texto">
+                        <h4>
+                            Time de alta performance:
+                        </h4>
+
+                        <p>
+                            Eleve seu poder de liderança a novos patamares.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--oq ira aprander fim-->
+
+    <!--nomes de peso-->
+    <section id="nomes-mentores">
+        <div class="container">
+            <h2>
+                Nomes de Peso que Também Estarão Lá
+            </h2>
+
+            <div class="flex-card-mentor">
+                <div class="card-mentor">
+                    <img src="img/mentor-icon.png" alt="" width="200">
+                    <p>
+                        Revelado em breve!
+                    </p>
+                </div>
+
+                <div class="card-mentor">
+                    <img src="img/mentor-icon.png" alt="" width="200">
+                    <p>
+                        Revelado em breve!
+                    </p>
+                </div>
+
+                <div class="card-mentor">
+                    <img src="img/mentor-icon.png" alt="" width="200">
+                    <p>
+                        Revelado em breve!
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!--nomes de peso-->
+
+
+
+    <!--secçao bonus-->
+    <section id="bonus">
+        <div class="container flex-bonus">
+
+            <img src="img/bonus.png" alt="">
+
+
+        </div>
+
+
+
+        </div>
+    </section>
+    <!--fim seção bonus-->
+
+
+
+    <!--depoimentos-->
+    <section id="depoimentos">
+        <div class="container">
+
+            <h2>
+                O que estão dizendo por aí da Imersão Elo
+            </h2>
+
+            <div class="videos-dp flex-dp">
+
+                <div class="dp-1">
+                    <iframe id="panda-6c677234-a2b9-4b93-b641-79571c0d2fd4"
+                        src="https://player-vz-e140793c-3ea.tv.pandavideo.com.br/embed/?v=6c677234-a2b9-4b93-b641-79571c0d2fd4"
+                        style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                        allowfullscreen=true width="720" height="360" fetchpriority="high">
+                    </iframe>
+                </div>
+
+                <div class="dp-2">
+                    <iframe id="panda-8f08dd40-7717-4871-a568-3e8799256ac7"
+                        src="https://player-vz-e140793c-3ea.tv.pandavideo.com.br/embed/?v=8f08dd40-7717-4871-a568-3e8799256ac7"
+                        style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                        allowfullscreen=true width="720" height="360" fetchpriority="high">
+                    </iframe>
+                </div>
+
+                <div class="dp-3">
+                    <iframe id="panda-6d579795-cca3-40f4-91c1-87a92ded6440"
+                        src="https://player-vz-e140793c-3ea.tv.pandavideo.com.br/embed/?v=6d579795-cca3-40f4-91c1-87a92ded6440"
+                        style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                        allowfullscreen=true width="720" height="360" fetchpriority="high">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--final depoimentpos-->
+
+    <!--detalhes-->
+    <section id="detalhes">
+        <div class="container">
+            <h2>
+                Detalhes Importantes
+            </h2>
+
+            <div class="flex-detalhes">
+
+                <div class="onde">
+                    <h3>
+                        Onde?
+                    </h3>
+
+                    <div class="detalhes-onde">
+                        <div class="icon-detalhes">
+                            <img src="img/icon-local.png" alt="" width="30">
+                        </div>
+
+                        <div class="txt-detaslhes">
+                            <p style="font-weight: bold;">
+                                Villa Blue Tree Morumbi
+                            </p>
+
+                            <p>
+                                R. Castro Verde, 266 - Jardim Caravelas, São Paulo - SP, 04729-060
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quando-horas">
+
+                    <div class="quando">
+                        <h3>
+                            Quando?
+                        </h3>
+
+                        <div class="quando-info">
+                            <div class="quando-info-icon">
+                                <img src="img/icon-calendario.png" alt="" width="30">
+                            </div>
+
+                            <div class="quando-info-txt">
+                                Dia 6 e 7 Setembro de 2024
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="q-horas">
+                        <h3>
+                            Que Horas?
+                        </h3>
+
+                        <div class="q-horas-info">
+                            <div class="quando-info-icon">
+                                <img src="img/icon-relogio.png" alt="" width="30">
+                            </div>
+
+                            <div class="quando-info-txt">
+                                Credeciamento a partir das 8h
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--detalhes-->
+
+
+
+
+
+
+
+    <!--aviso com cornometro-->
+    <div class="aviso">
+        <p>
+            Poucas vagas disponíveis para um seleto grupo na edição Presencial em São Paulo.
+        </p>
+
+        <p class="h3-cor">
+            Os ingressos esgotam em
+        </p>
+
+        <div class="countdown">
+            <div class="dias">
+                <span id="days">00</span>
+                <span>Dias</span>
+            </div>
+            <div class="horas">
+                <span id="hours">00</span>
+                <span>Horas</span>
+            </div>
+            <div class="minutos">
+                <span id="minutes">00</span>
+                <span>Minutos</span>
+            </div>
+            <div class="segundos">
+                <span id="seconds">00</span>
+                <span>Segundos</span>
+            </div>
+        </div>
+
+    </div>
+    <!-- fianl aviso com cornometro-->
+
+
+    <!--Section ingressos-->
+    <section id="ingressos">
+        <div class="container">
+            <div class="flex-ingresso">
+                <img onclick="openModal('premium')" src="img/ingresso.png" alt=""> <!-- Corrigido para 'premium' -->
+
+            </div>
+        </div>
+    </section>
+    <!--fim section ingresso-->
+
+    <!-- Modal para o formulário -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>
+                Preencha aqui os seus dados para garantir o seu ingresso.
+            </h3>
+            <!-- Formulário -->
+            <form action="formulario.php" method="POST">
+                <input type="hidden" id="tipo_ingresso" name="tipo_ingresso">
+                <!-- Campo oculto para armazenar o tipo de ingresso -->
+                <label for="nome">Nome:</label> <br>
+                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="whatsapp">WhatsApp:</label> <br>
+                <input type="text" id="whatsapp" name="whatsapp" required><br><br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" required><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <!--seção duvidas-->
+    <section id="duvida">
+        <div class="container">
+            <h2>FICOU COM ALGUMA DÚVIDA?</h2>
+            <p>Aperte o botão e fale com o time</p>
+            <a target="_blank" href="https://wa.me/5515991150500">ENTRAR EM CONTATO</a>
+        </div>
+    </section>
+    <!--Fim seção duvidas-->
+
+
+
+
+
+
+    <!--seção conheça o espaço-->
+
+    <!--fim seção conheça o espaço-->
+
+
+    <!--Seção bio-->
+    <section id="bio">
+        <div class="container flex flex-bio flex-mb">
+
+            <div class="bio-img">
+                <img src="img/bio-euclides-fim.jpg" alt="" width="500">
+            </div>
+            <div class="bio-txt">
+                <h2 id="h2-bio-pc" class="marrom">Quem será o seu mentor</h2>
+
+                <div id="bio-img-mb">
+                    <img src="img/bio-euclides-fim.jpg" alt="">
+                </div>
+
+                <h3>Euclides Germiniani Neto</h3>
+                <p>É um Empresário, Professor Universitário e Mentor que já ajudou centenas de médicos e profissionais
+                    da Saúde a escalarem seus consultórios particulares faturando acima dos 40 mil líquidos mensais.
+                    <br><br>
+                    Especialista em Marketing e Gestão Empresarial pela FGV já capacitou Grandes Redes Hospitalares,
+                    Clínicas e Laboratoriais, Euclides desenvolveu O Método Clínica Magnética que já transformou os
+                    negócios de vários Médicos em diferentes especialidades.
+                    São mais de 14 anos no Marketing e Gestão de Negócios como mentor e palestrante em congressos e
+                    eventos da saúde.
+                </p> <br>
+
+                <ul>
+                    <li>Atua com Gestão de Marketing desde 2008</li>
+                    <li>Mais de 14.000 mil profissionais da Saúde impactados</li>
+                    <li>Gerenciou Marcas com mais de 46 Bi de </li>
+                    <li>Mais de 400 palestras em grandes eventos da área da saúde</li>
+                    <li>Membro Ativo do Colégio Brasileiro de Executivos da Saúde</li>
+                </ul>
+            </div>
+
+
+
+            <div>
+                <h2 id="h2-bio-cll" class="marrom">O time que estará <br> com você nesse evento</h2>
+            </div>
+        </div>
+    </section>
+    <!--fim seção bio-->
+
+    <!--footer-->
+    <footer>
+        &copy; 2024 clínica magnética. Todos os direitos reservados.
+    </footer>
+    <!--fim footer-->
+
+
+
+
+    <!--script carrossel-->
+    <script src="meujs.js"></script>
+    <!--script carrossel-->
+
+    <!--script contador-->
+    <script>
+        // Função para iniciar o contador regressivo
+        function startCountdown() {
+            // Data do evento (altere conforme necessário)
+            const eventDate = new Date('2024-05-23T08:00:00');
+
+            // Atualiza o contador a cada segundo
+            const countdownInterval = setInterval(() => {
+                const currentDate = new Date().getTime();
+                const timeLeft = eventDate - currentDate;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('days').innerText = '00';
+                    document.getElementById('hours').innerText = '00';
+                    document.getElementById('minutes').innerText = '00';
+                    document.getElementById('seconds').innerText = '00';
+                    return;
+                }
+
+                // Calcula dias, horas, minutos e segundos restantes
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Atualiza os elementos HTML com os valores do contador
+                document.getElementById('days').innerText = formatTime(days);
+                document.getElementById('hours').innerText = formatTime(hours);
+                document.getElementById('minutes').innerText = formatTime(minutes);
+                document.getElementById('seconds').innerText = formatTime(seconds);
+            }, 1000);
+        }
+
+        // Adiciona um zero à esquerda se o número for menor que 10
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
+
+        // Inicia o contador quando a página é carregada
+        window.onload = startCountdown;
+
+    </script>
+    <!--script contador-->
+
+
+    <!--script da janela do formulario-->[
+    <script src="janela.js"></script>
+    <!--final do escript da janela do formulario-->
+</body>
+
+</html>

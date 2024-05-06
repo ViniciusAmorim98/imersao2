@@ -1,0 +1,393 @@
+/*responsivel*/
+@media only screen and (min-width: 360px) and (max-width: 800px) {
+
+    header {
+        background-image: url(../img/capa-mb,.png);
+        width: auto;
+        height: 500px;
+    }
+
+
+
+    #ele-mb {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .header-text img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .header-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 400px;
+    }
+
+    .header-text h1 {
+        font-size: 21px;
+        text-align: center;
+        line-height: 25px;
+        font-weight: 200;
+    }
+
+    .header-text h1 span {
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .header-text p {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    #ele-pc {
+        display: none;
+    }
+
+    header .header-flex {
+        flex-direction: column;
+    }
+
+    .header-flex {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-event .data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+    }
+
+    .info-event .loc {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #img-calendario {
+        margin: 0 0;
+    }
+
+    #img-calendario {
+        width: 20px;
+    }
+
+    #img-localizacao {
+        width: 20px;
+    }
+
+    .info-event {
+        width: 100%;
+    }
+
+    .faixa-top {
+        font-size: 0.9em;
+    }
+
+
+    /*video*/
+
+    #video {
+        margin-top: 185px;
+    }
+
+    #video .container iframe {
+        width: 100%;
+        height: 195px;
+        border-radius: 15px;
+    }
+
+    /*local*/
+
+    #check-pc {
+        display: none;
+    }
+
+    #check-mb {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #check-mb img {
+        border: solid 1px #af914d;
+        gap: 15px;
+
+    }
+
+    .flex-mb {
+        flex-direction: column-reverse;
+        /* border: solid red; */
+        gap: 20px;
+    }
+
+    #local .container div p {
+        text-align: left;
+    }
+
+    #local .container div {
+        width: 100% !important;
+    }
+
+    .info-local {
+        height: 290px;
+        width: 100%;
+    }
+
+    /*depoimentos*/
+    #depoimentos .container .flex-dp {
+        flex-direction: column;
+    }
+
+    #depoimentos h2 {
+        font-size: 1.4em;
+    }
+
+    /*oq vc vai aprender*/
+
+    #etapas-pc {
+        display: none;
+    }
+
+    #etapas-mb {
+        display: block;
+    }
+
+    /*ensinar*/
+
+    #ensinar .container .caixa-1 h2 {
+        font-size: 16px;
+        padding: 20px 0 10px 0;
+
+    }
+
+    #ensinar .container .caixa-1 {
+        padding: 0;
+
+    }
+
+    #ensinar .container .caixa-1 img {
+        width: 110%;
+        margin-left: -5%;
+    }
+
+    /*Bio*/
+    .bio-img img {
+        width: 100% !important;
+    }
+
+    #h2-bio-pc {
+        display: none;
+    }
+
+    #h2-bio-cll {
+        display: block;
+        text-align: center;
+    }
+
+
+
+    .bio-txt {
+        width: 100%;
+    }
+
+
+    .bio-img {
+        display: none;
+    }
+
+    #bio-img-mb {
+        display: block;
+    }
+
+    #bio-img-mb img {
+        width: 100%;
+        border-radius: 25px 0 25px 0;
+    }
+
+    /*bonus*/
+
+    #bonus .flex-bonus {
+        flex-direction: column;
+    }
+
+    #bonus .container img {
+        width: 100%;
+    }
+
+    /*ingressos*/
+    .flex-ingresso {
+        flex-direction: column-reverse;
+    }
+
+    #ingressos .container .flex-ingresso img {
+        width: 100%;
+    }
+
+    /*duvidas*/
+    #duvida {
+        background-size: cover;
+    }
+
+    #duvida .container h2 {
+        font-size: 32px;
+    }
+
+    /*carrossel*/
+    .carousel {
+        width: 80% !important;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #espaco .container-espaco {
+        flex-direction: column;
+    }
+
+    #espaco .container-espaco .container-mapa {
+        width: 80%;
+    }
+
+    .container-espaco {
+        width: 100%;
+    }
+
+    .h3-cor {
+        font-size: 1.5em;
+    }
+
+    /*virada*/
+
+    #img-chave-pc {
+        display: none;
+    }
+
+    #img-chave-mb {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .caixa-chave {
+        padding: 30px;
+    }
+
+    /*compara*/
+
+
+    #compara .container-compara {
+        flex-direction: column;
+    }
+
+    .sem,
+    .com {
+        width: 100%;
+    }
+
+    /*parada obrigatoria*/
+    #obrigatorio .container div .card {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    /*ira aprender*/
+    .card-aprender {
+        width: 100%;
+    }
+
+    /*nomes de peso*/
+    .card-mentor {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    /*detalhes*/
+    .flex-detalhes {
+        flex-direction: column;
+    }
+
+    .onde {
+        width: 100%;
+    }
+
+    .quando,
+    .q-horas {
+        width: 167%;
+        padding: 10px;
+    }
+
+    /*clareza*/
+    .container-clareza {
+        width: 80%;
+    }
+
+    #clareza .container-clareza div h2 {
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    #br-test {
+        display: none;
+    }
+
+    /*compara*/
+    #compara {
+        padding: 50px 0;
+    }
+
+    /*detalhes*/
+
+    #detalhes h2 {
+        font-size: 1.8em;
+    }
+
+    #detalhes .quando h3,
+    #detalhes .q-horas {
+        font-size: 0.8em;
+    }
+
+    #detalhes .quando-info-txt {
+        font-size: 0.9em;
+    }
+
+    #detalhes .q-horas-info-txt {
+        font-size: 0.8em;
+    }
+
+    .quando img,
+    .q-horas img {
+        width: 15px;
+        height: 15px;
+    }
+
+    /*obrigatorio*/
+    #obrigatorio h2 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    /*nomes mentores*/
+    #nomes-mentores h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+    body {
+        display: none;
+    }
+}

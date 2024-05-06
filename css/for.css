@@ -1,0 +1,52 @@
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: -120px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: black;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 50px #af924d61;
+}
+
+#nome,
+#whatsapp,
+#email {
+    width: 100%;
+    height: 25px;
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.modal input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 360px) and (max-width: 800px) {
+    .modal {
+        top: 0;
+    }
+}
